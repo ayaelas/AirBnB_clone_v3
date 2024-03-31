@@ -121,7 +121,7 @@ class Test_get_count(unittest.TestCase):
         cases = State()
         storage.new(cases)
         storage.new()
-        ids = storage.get(State, cases.id)
+        ids = storage.get("State", cases.id)
         self.assertEqual(ids.id, cases.id)
 
 
