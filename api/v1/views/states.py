@@ -11,6 +11,8 @@ objects that handle all default RestFul
 API actions for States,
 GET Method, Retrieves the list of all State objects
 """
+
+
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/state/get_state.yml', methods=['GET'])
 def get_states():
@@ -23,11 +25,14 @@ def get_states():
         list_states.append(state.to_dict())
     return jsonify(list_states)
 
+
 """
 objects that handle all default RestFul
 API actions for States,
 GET Method, Retrieves a specific State
 """
+
+
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/state/get_id_state.yml', methods=['get'])
 def get_state(state_id):
@@ -57,11 +62,14 @@ def delete_state(state_id):
 
     return make_response(jsonify({}), 200)
 
+
 """
 objects that handle all default RestFul
 API actions for States,
 POST Method, Creates a State
 """
+
+
 @app_views.route('/states', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/state/post_state.yml', methods=['POST'])
 def post_state():
@@ -79,11 +87,14 @@ def post_state():
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
 
-""" 
-objects that handle all default RestFul 
+
+"""
+objects that handle all default RestFul
 API actions for States,
 PUT Method, Updates a State
 """
+
+
 @app_views.route('/states/<state_id>', methods=['PUT'], strict_slashes=False)
 @swag_from('documentation/state/put_state.yml', methods=['PUT'])
 def put_state(state_id):
