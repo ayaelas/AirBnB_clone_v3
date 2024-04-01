@@ -26,6 +26,13 @@ def get_places(city_id):
     return jsonify(places)
 
 
+"""
+objects that handle all default RestFul,
+API actions for Places,
+GET Method, Retrieves a specific Place
+"""
+
+
 @app_views.route('/places/<place_id>', methods=['GET'], strict_slashes=False)
 def get_place(place_id):
     """
@@ -36,6 +43,13 @@ def get_place(place_id):
         abort(404)
 
     return jsonify(place.to_dict())
+
+
+"""
+objects that handle all default RestFul
+API actions for Places,
+DELETE Method, Deletes a Place Object
+"""
 
 
 @app_views.route('/places/<place_id>', methods=['DELETE'],
@@ -54,6 +68,13 @@ def delete_place(place_id):
     storage.save()
 
     return make_response(jsonify({}), 200)
+
+
+"""
+objects that handle all default RestFul
+API actions for Places,
+POST Method, Creates a Place
+"""
 
 
 @app_views.route('/cities/<city_id>/places', methods=['POST'],
@@ -88,6 +109,13 @@ def post_place(city_id):
     return make_response(jsonify(instance.to_dict()), 201)
 
 
+"""
+objects that handle all default RestFul
+API actions for Places,
+PUT Method, Updates a Place
+"""
+
+
 @app_views.route('/places/<place_id>', methods=['PUT'], strict_slashes=False)
 def put_place(place_id):
     """
@@ -109,6 +137,14 @@ def put_place(place_id):
             setattr(place, key, value)
     storage.save()
     return make_response(jsonify(place.to_dict()), 200)
+
+
+"""
+objects that handle all default RestFul
+API actions for Places,
+GET Method, Retrieves all Place objects depending of the JSON in the body
+of the request
+"""
 
 
 @app_views.route('/places_search', methods=['POST'], strict_slashes=False)
