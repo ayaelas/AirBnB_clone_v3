@@ -12,7 +12,7 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route('/cities/<city_id>/places', methods=['GET'],
                  strict_slashes=False)
-def get_places(city_id):
+def get_the_places(city_id):
     """
     Retrieves the list of all Place objects of a City
     """
@@ -34,7 +34,7 @@ GET Method, Retrieves a specific Place
 
 
 @app_views.route('/places/<place_id>', methods=['GET'], strict_slashes=False)
-def get_place(place_id):
+def get_the_place(place_id):
     """
     Retrieves a Place object
     """
@@ -54,7 +54,7 @@ DELETE Method, Deletes a Place Object
 
 @app_views.route('/places/<place_id>', methods=['DELETE'],
                  strict_slashes=False)
-def delete_place(place_id):
+def delete_the_place(place_id):
     """
     Deletes a Place Object
     """
@@ -79,7 +79,7 @@ POST Method, Creates a Place
 
 @app_views.route('/cities/<city_id>/places', methods=['POST'],
                  strict_slashes=False)
-def post_place(city_id):
+def post_the_place(city_id):
     """
     Creates a Place
     """
@@ -117,7 +117,7 @@ PUT Method, Updates a Place
 
 
 @app_views.route('/places/<place_id>', methods=['PUT'], strict_slashes=False)
-def put_place(place_id):
+def put_the_place(place_id):
     """
     Updates a Place
     """
@@ -148,7 +148,7 @@ of the request
 
 
 @app_views.route('/places_search', methods=['POST'], strict_slashes=False)
-def places_search():
+def search_places():
     """
     Retrieves all Place objects depending of the JSON in the body
     of the request
