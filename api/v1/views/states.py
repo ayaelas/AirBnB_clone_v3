@@ -13,7 +13,7 @@ GET Method, Retrieves the list of all State objects
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
-def get_states():
+def get_the_states():
     """
     Retrieves the list of all State objects
     """
@@ -32,7 +32,7 @@ GET Method, Retrieves a specific State
 
 
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
-def get_state(state_id):
+def get_the_state(state_id):
     """ Retrieves a specific State """
     state = storage.get(State, state_id)
     if not state:
@@ -43,7 +43,7 @@ def get_state(state_id):
 
 @app_views.route('/states/<state_id>', methods=['DELETE'],
                  strict_slashes=False)
-def delete_state(state_id):
+def delete_the_state(state_id):
     """
     Deletes a State Object
     """
@@ -67,7 +67,7 @@ POST Method, Creates a State
 
 
 @app_views.route('/states', methods=['POST'], strict_slashes=False)
-def post_state():
+def post_the_state():
     """
     Creates a State
     """
@@ -91,7 +91,7 @@ PUT Method, Updates a State
 
 
 @app_views.route('/states/<state_id>', methods=['PUT'], strict_slashes=False)
-def put_state(state_id):
+def put_the_state(state_id):
     """
     Updates a State
     """
